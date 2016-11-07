@@ -6,10 +6,10 @@ https://github.com/InsightDataScience/digital-wallet
 
 ## Details of implementation
 
-The run.sh script implement the fraud detection algorithm with a python file antifraud.py.
+The `run.sh` script implement the fraud detection algorithm with a python file `antifraud.py`.
 
-The design of antifraud.py file's arguments involves the consideration of scalability.
-There are at least 4 arguments for antifraud.py:
+The design of `antifraud.py` file's arguments involves the consideration of scalability.
+There are at least 4 arguments for `antifraud.py`:
 
 1. The first argument, `batch_payment.txt`, contains past data that can be used to track users who have previously paid one another. These transactions should be used to build the initial state of the entire user network.
 
@@ -26,5 +26,11 @@ There are at least 4 arguments for antifraud.py:
  * `max_degree` for Feature 3 should be 4
 
  More generally, the program can extend to any degree's social networks.
+
+`antifraud.py` file mainly implements the following tasks:
+
+1. Build "friends network" based on payment data in `batch_payment.txt`. The "friends network" is an undirected graph, each node represents an user, and each edge represents a payment between two users. Hashmap (Dictionary in python) is used as the data structure for storing the "friends network". The key is a userID and the value is a set of its neighbors' userIDs.
+
+2. 
 
 ##Ideas of additional features
