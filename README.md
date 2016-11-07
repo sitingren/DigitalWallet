@@ -33,6 +33,8 @@ The `antifraud.py` file mainly implements the following tasks:
 
 2. Extract payment information from `stream_payment.txt`. The fields in the payment record we only care about is IDs of users making/receiving the payment. So `time`, `amount` and `message` fields are ignored. All payment information is stored in a list. Each payment is represented as a tuple (`userID1`, `userID2`).
 
-3. For each payment record, check whether one user can reach the other user within max_degree steps. BFS is used to implement the fraud detection algorithm. If one user is outside the "friends network" (has no payment record before, not a key in hashmap) or cannot reach the other user within max_degree steps, then this payment is unverified.
+3. For each payment record, check whether one user can reach the other user within max_degree steps. BFS (Breadth-first search) is used to implement the fraud detection algorithm. If one user is outside the "friends network" (has no payment record before, in other words, not a key in hashmap) or cannot reach the other user within max_degree steps, then this payment is unverified.
 
 ##Ideas of additional features
+
+There are additional features that might be useful to prevent fraudulent payments based on what data we have. One idea is comparing sequences of transactions (their amount or frequency) to detect a change in behaviour for a particular user. Another idea is doing semantic analysis on the `message` field, and detect suspicious words.
