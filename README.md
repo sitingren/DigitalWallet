@@ -31,6 +31,6 @@ There are at least 4 arguments for `antifraud.py`:
 
 1. Build "friends network" based on payment data in `batch_payment.txt`. The "friends network" is an undirected graph, each node represents an user, and each edge represents a payment between two users. Hashmap (Dictionary in python) is used as the data structure for storing the "friends network". The key is a userID and the value is a set of its neighbors' userIDs.
 
-2. 
+2. Extract payment information from `stream_payment.txt`. The fields in the payment record we only care about is IDs of users making/receiving the payment. So `time`, `amount` and `message` fields are ignored. All payment information is stored in a list. Each payment is represented as a tuple (`userID1`, `userID2`).
 
 ##Ideas of additional features
