@@ -27,10 +27,12 @@ There are at least 4 arguments for `antifraud.py`:
 
  More generally, the program can extend to any degree's social networks.
 
-`antifraud.py` file mainly implements the following tasks:
+The `antifraud.py` file mainly implements the following tasks:
 
 1. Build "friends network" based on payment data in `batch_payment.txt`. The "friends network" is an undirected graph, each node represents an user, and each edge represents a payment between two users. Hashmap (Dictionary in python) is used as the data structure for storing the "friends network". The key is a userID and the value is a set of its neighbors' userIDs.
 
 2. Extract payment information from `stream_payment.txt`. The fields in the payment record we only care about is IDs of users making/receiving the payment. So `time`, `amount` and `message` fields are ignored. All payment information is stored in a list. Each payment is represented as a tuple (`userID1`, `userID2`).
+
+3. For each payment record, check whether one user can reach the other user within max_degree steps. BFS is used to implement the fraud detection algorithm. If one user is outside the "friends network" (has no payment record before, not a key in hashmap) or cannot reach the other user within max_degree steps, then this payment is unverified.
 
 ##Ideas of additional features
