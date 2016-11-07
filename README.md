@@ -37,4 +37,4 @@ The `antifraud.py` file mainly implements the following tasks:
 
 ##Ideas of additional features
 
-There are additional features that might be useful to prevent fraudulent payments based on what data we have. One idea is comparing sequences of transactions (their amount or frequency, i.e. `time` and `amount` fields) to detect a change in behaviour for a particular user. Another idea is doing semantic analysis on the `message` field, and detecting suspicious words.
+There are additional features that might be useful to prevent fraudulent payments based on what data we have. One idea is comparing sequences of transactions (their amount or frequency, i.e. making use of `time` and `amount` fields) to detect a change in behaviour for a particular user. Another idea is doing semantic analysis on the `message` field, and detecting suspicious words.
