@@ -1,3 +1,6 @@
+# Copyright (c) 2021, Siting Ren <ren_siting@hotmail.com>
+# All rights reserved.
+
 # Author: Siting Ren
 # Version: 11/06/2016
 # Description: This program detects unverified payments.
